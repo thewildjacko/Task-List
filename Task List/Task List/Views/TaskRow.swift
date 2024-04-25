@@ -10,31 +10,42 @@ import SwiftUI
 struct TaskRow: View {
   @ObservedObject var taskStore: TaskStore
   
-  @Binding var currentIndex: Int
-  @Binding var showDetailView: Bool
-  
   var task: Task
-  var index: Int
   
   var body: some View {
     VStack {
       HStack {
-        TaskViewButton(taskStore: taskStore, currentIndex: $currentIndex, showDetailView: $showDetailView, task: task, index: index)
-        CompletionButton(taskStore: taskStore, task: task, index: index)
+        HStack {
+          Text(task.title)
+            .foregroundStyle(Color(Colors.task))
+            .fontWeight(.heavy)
+          Spacer()
+          Button(action: {
+            if let index = taskStore.tasks.firstIndex(where: { $0.id == task.id }) {
+              taskStore.tasks[index].isCompleted.toggle()
+            }
+          }, label: {
+            if task.isCompleted {
+              Symbols.complete
+                .foregroundColor(Colors.complete)
+                .fontWeight(.heavy)
+            } else {
+              Symbols.incomplete
+                .foregroundColor(Colors.incomplete)
+                .fontWeight(.heavy)
+            }
+          })
+        }
+        .padding(.vertical, 5)
+        Divider()
       }
-      .padding(.vertical, 5)
-      Divider()
+      .padding(.horizontal, 20)
     }
-    .padding(.horizontal, 20)
   }
 }
-
-struct TaskRowPreview: PreviewProvider {
-  static private let showDetailView = Binding.constant(false)
-  static private let task = Task()
-  static private let currentIndex = Binding.constant(0)
   
+struct TaskRowPreview: PreviewProvider {
   static var previews: some View {
-    TaskRow(taskStore: TaskStore(), currentIndex: currentIndex, showDetailView: showDetailView, task: task, index: 0)
+    TaskRow(taskStore: TaskStore(), task: Task())
   }
 }
