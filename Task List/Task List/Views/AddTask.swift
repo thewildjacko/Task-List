@@ -9,17 +9,27 @@ import SwiftUI
 
 struct AddTask: View {
   @ObservedObject var taskStore: TaskStore
- 
+  
   @Binding var showNewTask: Bool
   @State private var title = ""
   @State private var isCompleted = false
   @State private var notes = ""
+  @State private var category = Category.NoCategory
   
   var body: some View {
     NavigationView {
       Form {
         Section(header: Text("Task Title")) {
           TextField("Task Title", text: $title)
+        }
+        Section(header: Text("Category")) {
+          Picker(
+            selection: $category, label: Text("Category")) {
+              Text("None").tag(Category.NoCategory)
+              Text("Personal").tag(Category.Personal)
+              Text("Work").tag(Category.Home)
+              Text("Home").tag(Category.Home)
+            }
         }
         Section(header: Text("Notes")) {
           TextField("Notes", text: $notes, axis: .vertical)
@@ -42,7 +52,7 @@ struct AddTask: View {
   }
   
   private func addTask() {
-    taskStore.addTask(title: title, isCompleted: isCompleted, notes: notes)
+    taskStore.addTask(title: title, isCompleted: isCompleted, notes: notes, category: category)
     dismiss()
   }
   

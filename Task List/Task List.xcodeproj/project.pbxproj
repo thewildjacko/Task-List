@@ -19,6 +19,7 @@
 		1DA991AE2BB0ACC20019FF1D /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA991AD2BB0ACC20019FF1D /* TaskStore.swift */; };
 		1DA991B02BB0AF2D0019FF1D /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA991AF2BB0AF2D0019FF1D /* TaskRow.swift */; };
 		1DBF2B192BB33E9800C15692 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF2B182BB33E9800C15692 /* Constants.swift */; };
+		1DED81292BE1AD7C00BC409B /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DED81282BE1AD7C00BC409B /* MatrixView.swift */; };
 		1DF133B72BB3574900AE65BB /* NewTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF133B62BB3574900AE65BB /* NewTaskButton.swift */; };
 		1DF133B92BB3653900AE65BB /* AddTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF133B82BB3653900AE65BB /* AddTask.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		1DA991AD2BB0ACC20019FF1D /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		1DA991AF2BB0AF2D0019FF1D /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 		1DBF2B182BB33E9800C15692 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1DED81282BE1AD7C00BC409B /* MatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
 		1DF133B62BB3574900AE65BB /* NewTaskButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskButton.swift; sourceTree = "<group>"; };
 		1DF133B82BB3653900AE65BB /* AddTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				1DA8A36A2BB36D6B00BD8DA3 /* DetailView.swift */,
 				1DF133B82BB3653900AE65BB /* AddTask.swift */,
 				1DF133B62BB3574900AE65BB /* NewTaskButton.swift */,
+				1DED81282BE1AD7C00BC409B /* MatrixView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				1DA8A36B2BB36D6B00BD8DA3 /* DetailView.swift in Sources */,
 				1DA991AC2BB0A6CA0019FF1D /* Task.swift in Sources */,
 				1DA991AE2BB0ACC20019FF1D /* TaskStore.swift in Sources */,
+				1DED81292BE1AD7C00BC409B /* MatrixView.swift in Sources */,
 				1DBF2B192BB33E9800C15692 /* Constants.swift in Sources */,
 				1DA991B02BB0AF2D0019FF1D /* TaskRow.swift in Sources */,
 				1D2B9C3B2BB0A1E100EF13A1 /* Task_ListApp.swift in Sources */,

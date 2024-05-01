@@ -18,6 +18,16 @@ struct DetailView: View {
       }
       .fontWeight(.bold)
       
+      Section(header: Text("Category")) {
+        Picker(
+          selection: $task.category, label: Text("Category")) {
+            Text("None").tag(Category.NoCategory)
+            Text("Personal").tag(Category.Personal)
+            Text("Work").tag(Category.Home)
+            Text("Home").tag(Category.Home)
+          }
+      }
+      
       Section(header: Text("Notes")) {
         TextField(task.notes, text: $task.notes, axis: .vertical)
           .lineLimit(5...)
@@ -34,7 +44,6 @@ struct DetailView: View {
     .toolbar {
       ToolbarItem(placement: .topBarTrailing) {
         Button(action: {
-          print("Saved!")
           if let index = taskStore.tasks.firstIndex(where: { $0.id == task.id }) {
             taskStore.tasks[index] = task
           }
@@ -45,7 +54,6 @@ struct DetailView: View {
     }
   }
 }
-
 
 struct DetailViewPreview: PreviewProvider {
   static var previews: some View {
