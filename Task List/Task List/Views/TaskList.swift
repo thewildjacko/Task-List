@@ -74,6 +74,7 @@ struct TaskList: View {
         }
         .searchable(text: $taskToSearch)
         .navigationTitle("My Tasks")
+        .padding(.top, 5)
         Spacer()
         HStack {
           NewTaskButton(showNewTask: $showNewTask)
