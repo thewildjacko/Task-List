@@ -37,6 +37,8 @@ struct DetailView: View {
         Toggle(isOn: $task.isCompleted) {
           Text("Completed:")
             .fontWeight(.bold)
+        }.onChange(of: task.isCompleted) {
+          task.boxColor = task.isCompleted ? Colors.complete : Colors.incomplete
         }
       }
     }
