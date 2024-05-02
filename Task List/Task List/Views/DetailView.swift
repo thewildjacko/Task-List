@@ -23,7 +23,7 @@ struct DetailView: View {
           selection: $task.category, label: Text("Category")) {
             Text("None").tag(Category.NoCategory)
             Text("Personal").tag(Category.Personal)
-            Text("Work").tag(Category.Home)
+            Text("Work").tag(Category.Work)
             Text("Home").tag(Category.Home)
           }
       }
